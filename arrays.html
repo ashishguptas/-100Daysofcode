@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+
+<body>
+
+
+    <script type="text/javascript">
+        // Arrays
+
+        let course = new Array("Ashish", 23, "Gupta");
+        console.log(course);
+
+        let cour = new Array("Ashish", "Gupta", "Gupta");
+        let cure = cour[1];
+        cour[1] = "Lalluram";
+        console.log(cour);
+
+        // other way to create arrays
+        let school = new Array();
+        school[0] = "Public";
+        school[1] = "Podar";
+        school[2] = "Patuck";
+        // console.log(school);
+        let chSchool = school[1];
+        school[1] = "Podar International School";
+        console.log(school);
+
+        // Array Literal
+
+        let modal = ["Priyanka", "Lady gaga"];
+        console.log(modal);
+
+        // Array Properties & Methods
+
+        let animal = ["Lion", "Tiger", "Cheeta"];
+        console.log(animal.length);
+
+        // concat arrays
+        let c1 = ["HTML", "css", "js"];
+        let c2 = ["React", "Redux"];
+        let resut = c1.concat(c2);
+        console.log(resut);
+
+        // Associative Arrays
+        var person = []; //empty array
+        person["name"] = "John";
+        person["age"] = 46;
+        document.write(person["age"]);
+        //Outputs "46"
+
+        // Math object
+        /*
+        abs(x) - Return the absoulte value of x 
+        acos(x) - Return the reccosine of x, in radians
+        asin(x) - Return the arsine of x, in radians 
+
+        */
+
+        // let n = prompt("Please enter the value");
+        // let anwser = Math.sqrt(n);
+        // console.log(anwser);
+
+        // date object
+
+        function myconsole(){
+            // console.log("Hi")
+        }
+        setInterval(myconsole, 3000)
+        
+        let dates = new Date();
+        let Thours = dates.getMinutes();
+        console.log(Thours);
+
+        /*
+            getFullYear() - gets the year
+            getMonth() -  gets the month
+            getdate() - get the date 
+            getHours() - get the hours
+            getMinutes() - get the minutes
+            getSeconds() - get the second
+            getMilliseconds() - gets the milliseconds
+
+        */
+
+        let AA;
+        console.log(1 + AA);
+
+        let BB = true;
+        console.log([AA,BB].toString() + 2)
+
+        let CC = null;
+        console.log(Number(CC) + "3")
+    </script>
+</body>
+
+</html>

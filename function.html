@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+</head>
+
+<body>
+
+    <button onclick="mybutton()">Click</button>
+    <script>
+        // user defined function
+        function name() {
+
+        }
+
+        function myFunction() {
+            console.log('Alert')
+        }
+        myFunction();
+
+        // Function Parameters
+        function name(param1, param2, param3) {
+            // code
+        }
+
+        function sayHello(name, name12) {
+            name = "Ashish"
+            name12 = "Hello"
+            console.log("Hi " + name, name12);
+        }
+
+        sayHello(name);
+        // sayHello(name12);
+        // sayHello("Gupta");
+        // console.log(sayhello)
+
+        //  Using Multiple Parameters with Functions
+
+        function stayHome(naam, aag) {
+            naam = "Ashish";
+            aag = "23.5"
+            console.log(naam + " is " + aag)
+        }
+        stayHome();
+
+        function name(x, y) {
+
+        }
+
+        function sayRam(name, age) {
+            console.log(name + " is " + age + " years old ");
+        }
+        sayRam("Ashish", 23);
+
+        function test(x, y) {
+            x = 100;
+            y = 150;
+            if (x > y) {
+                console.log(x);
+            } else {
+                console.log(y)
+            }
+        }
+        test();
+
+        // Function return
+
+        function myFunc(a, b) {
+            return a * b;
+        }
+        let result = myFunc(5, 5);
+        console.log(result);
+
+        function addNumber(a, b) {
+            let c = a + b;
+            return c;
+        }
+        console.log(addNumber(40, 5));
+
+        // Alert, Prompt, Confirm
+
+
+        function mybutton() {
+            alert("This is ok")
+        }
+
+        // let users = prompt("Please enter your name");
+        // console.log(typeof(users));
+
+        let resuu = confirm("do you want leave it?");
+        if (resuu === true) {
+            console.log("Thanks for visit");
+        } else {
+            console.log("Thanks for staying with us")
+        }
+
+        let numbers = 0;
+        function testing(numbers) {
+            while (numbers < 5) {
+                numbers++
+            }
+            return numbers;
+        }
+        console.log(testing(2));
+
+        function moo(a, b) {
+            if (a > b) {
+                return a * b;
+            } else {
+                return b / a;
+            }
+        }
+        console.log(moo(5, 15));
+
+        // quiz
+
+        function multNmbrs(a, b) {
+            var c = a * b;
+            // console.log(c)
+            // return c;
+        }
+        multNmbrs(2, 6);
+    </script>
+</body>
+
+</html>
