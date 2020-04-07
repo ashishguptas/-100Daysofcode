@@ -83,12 +83,13 @@
             console.log("city")
         }
 
-        console.log(typeof("universe"));
-        console.log(typeof(new String("universal")));
+        console.log(typeof("universe")); // string 
+        console.log(typeof(new String("universal"))); // object because new key added 
 
         let userName = new String("JS");
         // console.log(userName.length);
         userName.food = "Kimchi";
+        // console.log(userName)
         console.log(typeof(new String(userName)));
 
         let apple = {
@@ -119,7 +120,7 @@
         console.log(bpp);
 
         function fooFighter(){
-            if(1<2){
+            if(12){
                 let foo = "foo  barzinga";
                 console.log(foo);
             }

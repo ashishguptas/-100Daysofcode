@@ -1,11 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dom</title>
+    <style>
+        body {
+            position: relative;
+        }
+
+        #container {
+            width: 200px;
+            height: 200px;
+            background: green;
+            position: relative;
+        }
+
+        #box {
+            width: 50px;
+            height: 50px;
+            background: red;
+            position: absolute;
+        }
+
+        #arrow {
+            width: 50px;
+            height: 50px;
+            background: red;
+            position: absolute;
+        }
+    </style>
 </head>
+
 <body>
-    
+
+    <p>Lorem</p>
+
+    <p id="demo">Ashish Gupta</p>
+
+    <p class="demo">change to class name</p>
+    <p class="demo">change to class name</p>
+
+    <h1>Head 1</h1>
+    <h1>Head 2</h1>
+    <h1>Head 3</h1>
+
+    <div id="demo2">
+        <p>One One</p>
+        <p>Two</p>
+        <p>Three</p>
+    </div>
+    <img id="demo-img" src="https://dummyimage.com/600x400/000/fff" alt="dummy Images">
+    <a href="https://google.com">google</a>
+
+    <div id="styleChange" style="width: 200px;">style change</div>
+    <div id="crElement">Change Element</div>
+
+    <div id="texts">
+        <div id="tx1">This is one</div>
+        <div id="tx2">This is two</div>
+    </div>
+
+    <div id="rplacetxt">
+        <div id="rp1">This is replece one</div>
+        <div id="rp2">This is replce two</div>
+    </div>
+    <script type="text/javascript">
+
+        // document.body.innerHTML = "This is dom";
+
+        // Selecting Elements
+        // all element are object and we know every object has properties and method 
+
+        // document.getElementById(id);
+        // document.getElementsByClassName(name);
+        // document.getElementsByTagName(name);
+
+
+
+
+
+        let arra = document.getElementsByTagName('h1');
+        for (var x = 0; x < arra.length; x++) {
+            arra[x].innerHTML = "Hey There";
+            // console.log(arra)
+        }
+
+        var demo2 = document.getElementById("demo2");
+        // console.log(demo2.firstElementChild)
+        var arr2 = demo2.childNodes;
+        for (var z = 0; z < arr2.length; z++) {
+            arr2[z].innerHTML = "new text";
+            // arr2[1].style.backgroundColor = "yellow";
+        }
+        // console.log(demo2.children.length)
+
+         
+
+
+        // Changing Attributes
+
+        // img src change
+        let el = document.getElementById("demo-img");
+        el.src = "https://dummyimage.com/100x100/000/fff"
+
+        // href change
+
+        let el2 = document.getElementsByTagName("a");
+        el2[0].href = "http://www.sololearn.com";
+
+        // changing style
+
+        let st = document.getElementById("styleChange");
+        st.style.color = "blue";
+        st.style.fontSize = "20px";
+
+        // Adding & Removing Elements
+
+        // create element
+        // let node = document.createTextNode("Some new text");
+
+        // let xp = document.createElement("p");
+        // let nodes = document.createTextNode("Add this text");
+        // xp.appendChild(node);
+
+        // let div = document.getElementById("crElement");
+        // div.appendChild(xp);
+
+        // removing element
+        let parent = document.getElementById("texts");
+        let child = document.getElementById("tx2");
+        parent.removeChild(child);
+
+        // replace element
+
+        // let repo = document.createElement("p");
+        // let repoChild = document.createTextNode("This is three");
+        // repo.appendChild(node);
+
+        // let parent2 = document.getElementById("rplacetxt");
+        // let child2 = document.getElementById("rp2");
+        // parent2.replaceChild(repo, child2); 
+    </script>
+    <div id="container">
+        <div id="box"></div>
+    </div>
+
+    <div id="arrow">Arrow</div>
+    <script type="text/javascript">
+        // creating animation
+
+        // setinterval(move,500)
+        var t = setInterval(move, 100);
+        let pos = 0;
+        let box = document.getElementById("box");
+
+        function move() {
+            if (pos >= 100) {
+                clearInterval(t);
+            } else {
+                pos += 10;
+                box.style.top = pos + "px";
+            }
+        }
+
+        let arrow = setInterval(moving, 10);
+        let post = 0;
+        let arrows = document.getElementById("arrow");
+
+        function moving() {
+            if (post >= 500) {
+                clearInterval(arrow);
+            } else {
+                post += 1;
+                arrows.style.top = post + "px";
+            }
+
+        }
+        moving();
+    </script>
+
+    <script type="text/javascript">
+        // Handling Events
+        
+    </script>
 </body>
+
 </html>
