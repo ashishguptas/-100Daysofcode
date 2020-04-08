@@ -30,10 +30,24 @@
             background: red;
             position: absolute;
         }
+
+        #dnbox {
+            width: 200px;
+            height: 200px;
+            background: blue;
+            position: relative;
+        }
+
+        #smbox {
+            width: 50px;
+            height: 50px;
+            background: darkcyan;
+            position: absolute;
+        }
     </style>
 </head>
 
-<body>
+<body onload="loadFun()">
 
     <p>Lorem</p>
 
@@ -91,12 +105,12 @@
         // console.log(demo2.firstElementChild)
         var arr2 = demo2.childNodes;
         for (var z = 0; z < arr2.length; z++) {
-            arr2[z].innerHTML = "new text";
+            arr2[1].innerHTML = "new text";
             // arr2[1].style.backgroundColor = "yellow";
         }
-        // console.log(demo2.children.length)
+        // console.log(demo2.childNodes.length)
 
-         
+
 
 
         // Changing Attributes
@@ -119,14 +133,8 @@
         // Adding & Removing Elements
 
         // create element
-        // let node = document.createTextNode("Some new text");
 
-        // let xp = document.createElement("p");
-        // let nodes = document.createTextNode("Add this text");
-        // xp.appendChild(node);
 
-        // let div = document.getElementById("crElement");
-        // div.appendChild(xp);
 
         // removing element
         let parent = document.getElementById("texts");
@@ -181,10 +189,197 @@
         moving();
     </script>
 
+    <p id="added">content change</p>
     <script type="text/javascript">
-        // Handling Events
-        
+        // adding element
+        let phara = document.createElement("h1");
+        let pNode = document.createTextNode("This is new heading");
+        phara.appendChild(pNode);
+
+        let divs = document.getElementById("added");
+        divs.appendChild(phara);
     </script>
+
+    <p id="hello">Hello </p>
+    <script>
+        let hello = document.createElement("span");
+        let textAdd = document.createTextNode("Ashish");
+        hello.appendChild(textAdd);
+
+        let hldiv = document.getElementById("hello");
+        hldiv.appendChild(hello);
+    </script>
+
+    <div id="ram">
+        <p id="par1">dummy text</p>
+        <h5 id="par2">dummy head text</h5>
+    </div>
+    <script>
+        // removing element
+        const ramMove = document.getElementById("ram");
+        const head1 = document.getElementById("par2");
+        ramMove.removeChild(head1);
+    </script>
+
+    <div id="replEl">
+        <p id="rep1">Text Replace</p>
+        <h5 id="rep2">Text Replace2</h5>
+    </div>
+    <script>
+        // replace element
+
+        let repEl = document.createElement("span");
+        let rpTxt = document.createTextNode("This is replace");
+        repEl.appendChild(rpTxt);
+
+        let parRp = document.getElementById("replEl");
+        let ParChild = document.getElementById("rep2");
+        parRp.replaceChild(repEl, ParChild)
+    </script>
+
+    <div id="dnbox">
+        <div id="smbox">
+            sq
+        </div>
+    </div>
+    <script>
+        // create animation
+        let anBox = setInterval(moveBox, 10);
+        let boxpos = 0;
+        let smbox = document.getElementById("smbox");
+
+        function moveBox() {
+            if (boxpos >= 100) {
+                clearInterval();
+            } else {
+                boxpos += 1;
+                smbox.style.top = boxpos + "px";
+            }
+        }
+        // moveBox();
+
+    </script>
+
+    <button onclick="openme()">Click Me!!</button>
+    <span id="assign">assign click</span>
+    <input type="text" id="changeTxt" onchange="valueUpper()">
+
+    <button id="addevent">addEventListener</button>
+
+
+    <script>
+        // Handling Events
+
+        function openme() {
+            console.log('`its work`')
+        }
+
+        let ass = document.getElementById("assign");
+        ass.onclick = function () {
+            document.body.innerHTML = new Date();
+            // console.log('Assign Text')
+        }
+
+        function loadFun() {
+            // alert('Body Load')
+        }
+        window.onload = function () {
+            // alert('Window load')
+        }
+
+        function valueUpper() {
+            let inBox = document.getElementById("changeTxt");
+            inBox.value = inBox.value.toUpperCase();
+        }
+
+        // event listeners
+        // let check = addEventListener(click, myfunction)
+
+        let addBtn = document.getElementById('addevent');
+        addBtn.addEventListener("click", funName, true);
+
+        function funName() {
+            console.log(Math.random());
+            addBtn.removeEventListener("click", funName, true);
+        }
+    </script>
+
+    <!--Event Propagation-->
+    <script>
+        //Capturing propagation
+        // elem1.addEventListener("click", myFunction, true);
+
+        //Bubbling propagation
+        // elem2.addEventListener("click", myFunction, false);
+    </script>
+
+    <div id="slider-img">
+        <button onclick="prev()">Prev</button>
+        <img id="slide-img" src="https://dummyimage.com/200x200/000/fff" alt="">
+        <button onclick="next()">Next</button>
+    </div>
+    <script>
+        // Creating an Image Slider
+
+        let sliderImage = [
+            "https://dummyimage.com/200x200/ebc334/fff",
+            "https://dummyimage.com/300x300/4212e0/fff",
+            "https://dummyimage.com/400x400/e30e1f/fff"
+        ];
+        var num = "0";
+        function next() {
+            var slideImg = document.getElementById('slide-img');
+            num++;
+            if (num >= sliderImage.length) {
+                num = 0;
+            }
+            slideImg.src = sliderImage[num];
+        }
+
+        function prev() {
+            var slideImg = document.getElementById('slide-img');
+            num--;
+            if (num < 0) {
+                num = sliderImage.length - 1;
+            }
+            slideImg.src = sliderImage[num]
+        }
+    </script>
+
+    <p id='txt' onclick='test();'>20</p>
+    <script>
+        function test() {
+            var x = document.getElementById('txt');
+            var n = x.innerHTML;
+            x.innerHTML = n / 2;
+        }
+    </script>
+
+    <form method="post" action="" onsubmit="return validate()">
+        Number: <input type="text" name="num1" id="num1"><br>
+        Repeat: <input type="text" name="num2" id="num2"><br>
+        <button type="submit">Submit</button>
+    </form>
+    <script type="text/javascript">
+            function validate(){
+                let n1 = document.getElementById('num1');
+                let n2 = document.getElementById('num2');
+                if(n1.value != "" && n2.value != ""){
+                    if(n1.value == n2.value){
+                        return true;
+                    }
+                }
+                console.log("This value should be equal and not blank");
+                return false;
+            }
+    </script>
+    <div id="test">
+        <p>some text</p>
+        </div>
+        <script>
+        var eal=document.getElementById("test");
+        alert(eal.hasChildNodes());
+        </script>
 </body>
 
 </html>
