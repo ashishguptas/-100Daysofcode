@@ -80,7 +80,28 @@
             default:
                 console.log('none of above');
         }
+
     </script>
+
+    <p id="output"></p>
+    <script type="text/javascript">
+        var xampp = "0";
+
+        switch (xampp) {
+            case 0:
+                text = "Off";
+                break;
+            case 1:
+                text = "On";
+                break;
+            default:
+                text = "No value found";
+        }
+        let result = document.getElementById('output').innerHTML = text;
+        console.log(result); // No value found
+    </script>
+
+
 </body>
 
 </html>
