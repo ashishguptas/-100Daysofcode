@@ -234,7 +234,7 @@
 
         let parRp = document.getElementById("replEl");
         let ParChild = document.getElementById("rep2");
-        parRp.replaceChild(repEl, ParChild)
+        parRp.replaceChild(repEl, ParChild);
     </script>
 
     <div id="dnbox">
@@ -250,7 +250,7 @@
 
         function moveBox() {
             if (boxpos >= 100) {
-                clearInterval();
+                clearInterval(anBox);
             } else {
                 boxpos += 1;
                 smbox.style.top = boxpos + "px";

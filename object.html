@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Object</title>
 </head>
+
 <body>
-    
+
+    <p id="cate"></p>
 
     <script type="text/javascript">
         // object contain many values
-        
+
         let person = {
-            name:"ashish",
-            age:23
+            name: "ashish",
+            age: 23
         };
         // javascript object are container for name value
- 
+
         let acess = {
-            count:"india",
-            numb:1000
+            count: "india",
+            numb: 1000
         };
         // let outCheck = acess.age;
         // let outCheck2 = acess.age;
@@ -30,25 +33,25 @@
 
         // creating your own object
         // object constructor
-        function persons(name,age,year){
+        function persons(name, age, year) {
             this.name = "Ashish",
-            this.age = 23,
-            this.year = 2020
+                this.age = 23,
+                this.year = 2020
         };
         let allu = new persons()
         console.log(allu);
 
         // Object Initialization
         // adding methods
- 
-        function fruit(names,types){
+
+        function fruit(names, types) {
             this.names = names;
             this.types = types;
-            this.changeName = function(names){
-                this.names=names;
+            this.changeName = function (names) {
+                this.names = names;
             }
         }
-        let fruitName = new fruit("Apple",42);
+        let fruitName = new fruit("Apple", 42);
         fruitName.changeName("Mango");
         console.log(fruitName.types);
 
@@ -56,41 +59,41 @@
             fru: "Mango"
         }
         let b = {
-            fru2 : "juice"
+            fru2: "juice"
         }
-        let c ={
+        let c = {
             cho: "choco"
         }
-        console.log(c&&b&&a)
+        console.log(c && b && a)
 
         let num1 = 100;
         let num2 = 30;
         let num3 = 80;
         num1 = num2 = num3;
-        console.log(num3,num2,num1);
+        console.log(num3, num2, num1);
 
-        let mac = () =>{
+        let mac = () => {
             let taddy = 3;
-            console.log(taddy++ *2);
+            console.log(taddy++ * 2);
         }
         mac();
 
         let car = "honda";
         let bike = "city";
-        if(car == "honda" && bike == bike){
+        if (car == "honda" && bike == bike) {
             console.log("Honda")
-        } else{
+        } else {
             console.log("city")
         }
 
-        console.log(typeof("universe")); // string 
-        console.log(typeof(new String("universal"))); // object because new key added 
+        console.log(typeof ("universe")); // string 
+        console.log(typeof (new String("universal"))); // object because new key added 
 
         let userName = new String("JS");
         // console.log(userName.length);
         userName.food = "Kimchi";
         // console.log(userName)
-        console.log(typeof(new String(userName)));
+        console.log(typeof (new String(userName)));
 
         let apple = {
             namek: 'Foodbar'
@@ -100,7 +103,7 @@
         console.log(a.name);
 
         const usoo = {
-            name11:"Reena"
+            name11: "Reena"
         }
 
         usoo.name = "Reena2"
@@ -108,10 +111,10 @@
 
         // #90
 
-        for(let i=0; i<=10; i++){
-            setTimeout(function(){
+        for (let i = 0; i <= 10; i++) {
+            setTimeout(function () {
                 // console.log(i)
-            },1000)
+            }, 1000)
         }
 
         let app = 10;
@@ -119,8 +122,8 @@
         app = 100;
         console.log(bpp);
 
-        function fooFighter(){
-            if(12){
+        function fooFighter() {
+            if (12) {
                 let foo = "foo  barzinga";
                 console.log(foo);
             }
@@ -128,12 +131,12 @@
         fooFighter();
 
         const num = 1;
-        function func1(){
+        function func1() {
             console.log(`This is ${num}`)
         }
         // func1();
 
-        function func2(){
+        function func2() {
             const num = 2;
             func1();
         }
@@ -144,20 +147,20 @@
         // }
         // let apples = banana; 
         // console.log(apples)
-        let aam = "2"+"8";
-        let bam = aam.replace("2","3");
+        let aam = "2" + "8";
+        let bam = aam.replace("2", "3");
         console.log(bam);
 
         let ages = {
-            age1:23
+            age1: 23
         }
         let bges = ages;
         let zges = {
-            age1:23
+            age1: 23
         }
         console.log(bges !== (ages !== zges));
 
-        function money(){
+        function money() {
             b_later = "euro"
             a_first = "doller"
             return a_first;
@@ -167,19 +170,49 @@
         console.log(cash);
 
         let xa = 10;
-        let ya = xa%4;
-        let za = ya/2;
-        let ca = xa*za;
+        let ya = xa % 4;
+        let za = ya / 2;
+        let ca = xa * za;
         console.log(xa);
 
         var am = 10;
 
-        var bm = function(){
+        var bm = function () {
             console.log(am);
             var am = 20;
         }
         bm();
- 
+
+        let frayingPan = [
+            {
+                names: 'apple',
+                category: 'pomaceous'
+            },
+            {
+                names: 'lemon',
+                category: 'citrus'
+            },
+            {
+                names: 'straw',
+                category: 'berries'
+            }
+        ]
+
+        let i = 0;
+        frayingPan.forEach(function(panSum){
+            // let fraying = frayingPan[i].names;
+            let category = frayingPan[i].category;
+
+            console.log(category);
+            i = i+1;
+        });  
+        // output
+        /*
+            pomaceous
+            citrus
+            berries
+        */
     </script>
 </body>
+
 </html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6</title>
+</head>
+
+<body>
+
+
+    <script type="text/javascript">
+        // var & let var is a globaly and localy scope and let is the limited scope
+        var a = 10;
+        const b = 'hello';
+        let c = 'true';
+        let reult = a + b + c;
+        console.log(reult);
+
+        if (true) {
+            let name = 'Ashish';
+            console.log(name);
+        }
+
+        function varTest() {
+            var x = 1;
+            if (true) {
+                var x = 2;
+                console.log(x)
+            }
+            console.log(x)
+        }
+        varTest();
+
+        function letTest() {
+            let x = 3;
+            if (true) {
+                let x = 4;
+                console.log(x)
+            }
+            console.log(x)
+        }
+        letTest();
+
+        for (let i = 11; i <= 15; i++) {
+            console.log(i)
+        }
+
+        // const - is the same of var and let but const are not allowed to reassignd 
+
+        // const con = 10;
+        // con = 20;
+
+        // Template Literals in ES6
+
+        let names = 'Ashish';
+        let surname = `Welcome ${names}`;
+        console.log(surname);
+
+        // loop and function
+        let arr = [1, 2, 3];
+        for (let k = 0; k < arr.length; k++) {
+            console.log(arr[k])
+        };
+
+        // for of in use object
+        let obj = {
+            a: 10,
+            b: 20,
+            c: 30
+        }
+        for (let o in obj) {
+            console.log(o)
+        }
+
+        // for of of use in array
+        let list = ["x", 10, "z"];
+        for (let l of list) {
+            console.log(l)
+        }
+
+        for (let ch of "Hello") {
+            console.log(ch);
+        }
+
+        // Functions in ECMAScript 6
+
+        function add(x, y) {
+            var sum = x + y;
+            console.log(sum)
+        }
+        add(1, 2);
+
+        const added = (x, y) => {
+            let adding = x + y;
+            console.log(adding)
+        }
+        added(5, 6);
+
+
+        // The syntax is very useful for inline functions. For example, let's say we have an array, and for each element of the array we need to execute a function. We use the forEach method of the array to call a function for each element:
+
+        let army = [1, 2, 3, 4, 5, 6, 8, 10];
+        army.forEach(elm => {
+            console.log(elm + 2)
+        });
+
+        // Default Parameters in ES6
+
+        let test = (a, b = 3, c = 12) => {
+            return a + b + c;
+        }
+        console.log(test(5));
+
+        // ES6 Objects
+
+        let tree = {
+            height: 10,
+            color: 'red',
+            grow() {
+                this.height += 5;
+            }
+        };
+        tree.grow();
+        console.log(tree.height);
+
+        // Computed Property Names
+
+        let prop = 'name';
+        let id = '8898';
+        let mobile = '8108';
+
+        let user = {
+            [prop] : 'Ashish',
+            [`user_${id}`]: `${mobile}`
+        }
+        console.log(user);
+
+        // Object.assign() in ES6
+
+        let person = {
+            name:'Ashish',
+            age:23,
+            num:24,
+            sex:'male'
+        }
+        let student = {
+            name:'Suu',
+            age:22,
+            xp:2
+        }
+        // console.log(student)
+        let merObj = Object.assign({},person,student);
+        console.log(merObj);
+
+        let pers = {
+            names: 'Allu',
+            age:23.5
+        }
+        let addName = pers;
+        // let addName = Object.assign({},pers);
+        addName.names = 'Ashish Gupta';
+        console.log(addName.names);
+
+        let call ={
+            number:8108734228
+        }
+        let callNum = Object.assign({},call,{number:88982055});
+        console.log(callNum.number);
+
+        // Array Destructuring in ES6
+    </script>
+</body>
+
+</html>
