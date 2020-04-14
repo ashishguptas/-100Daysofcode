@@ -27,9 +27,9 @@
             var x = 1;
             if (true) {
                 var x = 2;
-                console.log(x)
+                console.log(x);
             }
-            console.log(x)
+            console.log(x);
         }
         varTest();
 
@@ -106,6 +106,10 @@
             console.log(elm + 2)
         });
 
+        let mango = [4, 6, 8];
+        mango.forEach(men => {
+            console.log(men - 1)
+        });
         // Default Parameters in ES6
 
         let test = (a, b = 3, c = 12) => {
@@ -128,48 +132,111 @@
         // Computed Property Names
 
         let prop = 'name';
-        let id = '8898';
+        let id = '12';
         let mobile = '8108';
 
         let user = {
-            [prop] : 'Ashish',
+            [prop]: 'Ashish',
             [`user_${id}`]: `${mobile}`
         }
-        console.log(user);
+        console.table(user);
 
         // Object.assign() in ES6
 
+        const obj1 = {
+            a: true,
+            b: true,
+            c: false
+        }
+        const obj2 = {
+            c: true,
+            d: true,
+            e: true
+        }
+        const obj3 = {
+            ...obj1,
+            ...obj2
+        }
+
+        let merge = Object.assign({}, obj2, obj1);
+        console.log(obj3);  // output -> a:true, b:true, c:true, d:true
+
         let person = {
-            name:'Ashish',
-            age:23,
-            num:24,
-            sex:'male'
+            name: 'Ashish',
+            age: 23,
+            num: 24,
+            sex: 'male'
         }
         let student = {
-            name:'Suu',
-            age:22,
-            xp:2
+            name: 'Suu',
+            age: 22,
+            xp: 2,
+            sex: 'female'
         }
         // console.log(student)
-        let merObj = Object.assign({},person,student);
+        let merObj = Object.assign({}, person, student);
         console.log(merObj);
 
         let pers = {
             names: 'Allu',
-            age:23.5
+            age: 23.5
         }
         let addName = pers;
         // let addName = Object.assign({},pers);
         addName.names = 'Ashish Gupta';
         console.log(addName.names);
 
-        let call ={
-            number:8108734228
+        let call = {
+            number: 8108734228
         }
-        let callNum = Object.assign({},call,{number:88982055});
+        let callNum = Object.assign({}, call, { number: 88982055 });
         console.log(callNum.number);
 
         // Array Destructuring in ES6
+
+        let arrmy = [1, 2, 3];
+        let [two, one, three] = arrmy;
+        console.log(two);
+
+        const objj = { one: 1, two: 2 };
+        let { one: first, two: second } = objj;
+        console.log(one);
+
+        // sprid object and array
+
+        let dateFields = [1970,0,1];
+        let date = new Date(...dateFields);
+        console.log(date);
+
+        let child1 = ['Ashish',23];
+        let chAdd = ['multi',65];
+        let res = child1.concat(chAdd);
+        console.log(res);
+
+        const obTest = {
+            name:'Ashish',
+            address:'Mumbai'
+        }
+        const obTest2 = {
+            name:'Allu',
+            addressa:'New Mumbai'
+        }
+        const cloneMerge = {...obTest2,...obTest};
+        console.log(cloneMerge);
+
+        const nums = [3,4,5];
+        const num2 = [1,2,...nums,6]
+        console.log(num2[3]);
+
+        // setTimeOut
+
+        setTimeOut(function(){
+            console.log("work 1");
+            setTimeout(function(){
+                console.log("work 2");
+            },1000);
+        },1000);
+        console.log('end');
     </script>
 </body>
 
